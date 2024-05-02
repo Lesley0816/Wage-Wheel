@@ -1,6 +1,6 @@
 // require sequelize
 
-const { Model, DataTypes, UniqueConstraintError } = require('sequelize');
+const { Model, DataTypes } = require('sequelize');
 
 // dependencies for password hashing
 const bcrypt = require('bcrypt');
