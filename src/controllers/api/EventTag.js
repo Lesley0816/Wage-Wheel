@@ -5,10 +5,10 @@ const { Event, User, EventTag } = require('../../models');
 
 router.get('/', async (req, res) => {
     try {
-        const eventData = await Event.findAll({
-            include: [{ model: User, EventTag }]
+        const tagData = await EventTag.findAll({
+            include: [{ model: User, Event }]
         });
-        res.status(200).json(eventData);
+        res.status(200).json(tagData);
     } catch (err) {
         res.status(500).json(err);
     }
@@ -16,10 +16,10 @@ router.get('/', async (req, res) => {
 
 router.get('/:id', async (req, res) => {
     try {
-        const eventData = await Event.findByPk({
-            include: [{model: User, EventTag}]
+        const tagData = await EventTag.findByPk({
+            include: [{model: User, Event}]
         });
-        res.status(200).json(eventData);
+        res.status(200).json(tagData);
     } catch (err) {
         res.status(500).json(err);
     }
@@ -27,11 +27,11 @@ router.get('/:id', async (req, res) => {
 
 router.post('/', async (req, res) => {
     try {
-        const eventData = await Event.create({
+        const tagData = await EventTag.create({
             ...req.body,
             user_id: req.session.user_id
         });
-        res.status(200).json(eventData);
+        res.status(200).json(tagData);
     } catch (err) {
         res.status(400).json(err);
     }
@@ -41,18 +41,18 @@ router.post('/', async (req, res) => {
 
 router.delete('/:id', async (req, res) =>{
     try {
-        const eventData = await Event.destroy({
+        const tagData = await EventTag.destroy({
             where: {
                 id: req.params.id,
                 user_id: req.session.user_id,
             },
         });
 
-        if (!eventData) {
-            res.status(404).json({ message: 'No Tag found with this id!' });
+        if (!tagData) {
+            res.status(404).json({ message: 'No EventTag found with this id!' });
             return;
         }
-        res.status(200).json(eventData);
+        res.status(200).json(tagData);
     } catch (err) {
         res.status(400).json(err);
     }
