@@ -15,8 +15,8 @@ EventTag.init(
             type: DataTypes.STRING,
             allowNull: false
         },
-        eventname: {
-            type: DataTypes.STRING,
+        event_id: {
+            type: DataTypes.INTEGER,
             references: {
                 model: 'event',
                 key: 'id'
@@ -28,7 +28,7 @@ EventTag.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'event',
+        modelName: 'eventtag',
     }
 );
 
