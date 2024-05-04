@@ -19,9 +19,8 @@ Event.init(
             type: DataTypes.DECIMAL(10, 2),
             allowNull: false,
         },
-
-        username: {
-            type: DataTypes.STRING,
+        user_id: {
+            type: DataTypes.INTEGER,
             references: {
                 model: 'user',
                 key: 'id'
