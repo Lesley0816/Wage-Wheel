@@ -15,9 +15,21 @@ Event.init(
             type: DataTypes.STRING,
             allowNull: false
         },
-        placebet: {
+        condition_1: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        condition_2: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
+        placebet_cond_1: {
             type: DataTypes.DECIMAL(10, 2),
             allowNull: false,
+        },
+        placebet_cond_2: {
+            type: DataTypes.DECIMAL(10, 2),
+            allowNull: false
         },
         user_id: {
             type: DataTypes.INTEGER,
