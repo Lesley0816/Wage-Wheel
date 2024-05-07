@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Event } = require('../../models');
+const { User, Event, UserBets } = require('../../models');
 
 // the `/api/users` endpoint
 
@@ -7,7 +7,7 @@ const { User, Event } = require('../../models');
 router.get('/', async (req, res) => {
     try {
         const userData = await User.findAll({
-            include: [{model: Event}]
+            include: [{model: Event, UserBets}]
         });
         res.status(200).json(userData);
     } catch (err) {
@@ -18,7 +18,7 @@ router.get('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
     try {
         const userData = await User.findByPk({
-            include: [{model: Event }]
+            include: [{model: Event, UserBets }]
         });
         res.status(200).json(userData);
     } catch (err) {

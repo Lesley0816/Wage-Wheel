@@ -1,20 +1,18 @@
 const router = require('express').Router();
-const { User } = require('../models');
+const { Event, UserBets, Category, User } = require('../models');
 const withAuth = require('../utils/withAuth');
 
-router.get('/', withAuth, async (req, res) => {
+
+router.get('/', async (req, res) => {
     try {
-        const userData = await User.findAll({
-            attributes: { exclude: ['password'] },
-            order: [['name', 'ASC']],
-        });
+        // const userData = await User.findAll({
+        //     attributes: { exclude: ['password'] },
+        //     order: [['name', 'ASC']],
+        // });
 
-        const users = userData.map((project) => project.get({ plain: true }));
+        // const users = userData.map((project) => project.get({ plain: true }));
 
-        res.render('homepage', {
-            users,
-            logged_in: req.session.logged_in,
-        });
+        res.render('homepage');
     } catch (err) {
         res.status(500).json(err);
     }
@@ -30,11 +28,22 @@ router.get('/login', (req, res) => {
 
 // go back for auth
 router.get('/signup', (req, res) => {
-   // if (req.session.logged_in) {
-//         res.redirect('/');
-//         return;
-//     }
+   if (req.session.logged_in) {
+        res.redirect('/');
+        return;
+    }
      res.render('signup');
+ });
+
+ router.get('/categories', async (req, res) =>{
+    try {
+    const categoryData = await Category.findAll();
+    const catagoryDataSerialize = categoryData.map((category) => category.get({ plain: true }));
+    console.log('categories', catagoryDataSerialize);
+    res.render('categories', {catagoryDataSerialize});  
+    } catch (err) {
+        res.status(500).json(err);    
+    }
  });
 
 module.exports = router;
