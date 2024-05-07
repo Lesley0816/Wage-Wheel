@@ -9,7 +9,6 @@ const userBetsData = [
     }
 ];
 
-const seedUserBets = () => Event.BulkCreate(userBetsData);
-//seedUserBets();
+const seedUserBets = () => UserBets.bulkCreate(userBetsData);
 
 module.exports = seedUserBets;
