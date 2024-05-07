@@ -1,31 +1,33 @@
 const { User } = require('../models');
 
-const userData = require('./userData.json');
-
-[
+const userData = [
     {
-      "username": "John Smith",
-      "email": "jsmith@hotmail.com",
-      "password": "password12345"
+        username: "John Smith",
+        email: "jsmith@hotmail.com",
+        password: "password12345"
     },
     {
-      "username": "Sus Luis",
-      "email": "susluis@gmail.com",
-      "password": "password12345"
+        username: "Sus Luis",
+        email: "susluis@gmail.com",
+        password: "password12345"
     },
     {
-      "username": "Blake Hudson",
-      "email": "blake@aol.com",
-      "password": "password12345"
+        username: "Blake Hudson",
+        email: "blake@aol.com",
+        password: "password12345"
     },
     {
-      "username": "James Wilson",
-      "email": "jwill99@msn.com",
-      "password": "password12345"
+        username: "James Wilson",
+        email: "jwill99@msn.com",
+        password: "password12345"
     },
     {
-      "username": "Laura Croft",
-      "email": "tombraider@yahoo.com",
-      "password": "password12345"
+        username: "Laura Croft",
+        email: "tombraider@yahoo.com",
+        password: "password12345"
     }
-  ]
+];
+
+const seedUsers = () => User.bulkCreate(userData);
+
+module.exports = seedUsers;
