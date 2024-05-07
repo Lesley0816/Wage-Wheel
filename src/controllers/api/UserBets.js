@@ -31,13 +31,23 @@ router.post('/', async (req, res) => {
             ...req.body,
             user_id: req.session.user_id
         });
-        const eventData = await Event.update(req.body, {
-            
+        const eventData = await Event.findByPk(id);
+        if (req.cond_1 !== 0) {
+            const newTotalA = eventData.pool_a + req.cond_1
+        const updatePoolA = await Event.update({pool_a: newTotalA}, {
             where: {
-                id: req.params.id.newTotal,
+                id: req.params.id,
             },
         });
-        res.status(200).json(userBetsData, eventData);
+        } if (req.cond_2 !==0 ) {
+            const newTotalB = eventData.pool_b + req.cond_2
+            const updatePoolB = await Event.update({pool_b: newTotalB}, {
+                where: {
+                    id: req.params.id,
+                },
+            });
+        }
+        res.status(200).json(userBetsData);
     } catch (err) {
         res.status(400).json(err);
     }

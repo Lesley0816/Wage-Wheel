@@ -23,7 +23,7 @@ Event.belongsTo(User, {
 });
 
 Event.hasMany(UserBets, {
-    foreignKey: 'eventtag_id',
+    foreignKey: 'userbets_id',
     onDelete: "cascade"
 });
 
@@ -36,4 +36,5 @@ UserBets.belongsTo(User, {
     foreignKey: 'user_id',
     onDelete: "cascade"
 });
+
 module.exports = { User, Event, UserBets, Category };
