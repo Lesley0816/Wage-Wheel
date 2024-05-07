@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+body{
+    background: linear-gradient(black 10%, #374BE6);
+    height: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+ }
+
+
+ nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10%;
+    
+  }
+  
+  .title{
+      color:white;
+      font-family: "Roboto", sans-serif;
+      font-size: 20px;
+  }
+  
+  ul {
+    list-style: none;
+  }
+  
+  .nav-bar li {
+    display: inline-block;
+    padding: 0px 50px;
+    width: 15rem; 
+    
+  }
+  
+  .nav-bar li a {
+    transition: all 0.3s ease 0s;
+    text-decoration: none;
+    color: white;
+    transition: all 0.3s ease 0s;
+    font-family: "Montserrat", sans-serif;
+
+    
+  }
+  
+  .nav-bar li a:hover {
+    color: #7F02E5;
+  }
+
+
+
+  .sport-options{
+    display: flex;
+  }
+
+  .scroll-container{
+    display: flex;
+    flex-direction: row;
+  }
+
+  .main-container{
+    background-color: black;
+    width: 300px;
+    height: 500px;
+    margin: 100px auto 20px;
+    padding: 30px;
+    border-radius: 10px;
+    
+  }
+
+  .main-container img{
+    height: 250px;
+    margin: 20px;
+  }
+
+  .input-bet{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #edeef0;
+    border-radius: 30px;
+    padding-left: 20px;
+    margin-bottom: 25px;
+  }
+
+  input{
+    flex: 1; 
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 10px;
+    font-family: "Montserrat";
+  }
+
+  button{
+    border: none;
+    outline: none;
+    padding: 16px 20px;
+    background: #0cf24d;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 40px;
+    font-family: "Roboto";
+   
+  }
+
+  .name{
+    color: #fff;
+    font-family: "Montserrat";
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .stat{
+    color: #fff;
+    font-family: "Roboto";
+    font-weight: 100;
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+.category-top{
+  color: #fff; 
+  font-family: "Roboto", sans-serif;
+  margin-left: 2rem;
+  font-weight: 400; 
+  
+}
+
+.search-bet-container{
+
+margin-top: 1px;
+padding: 200px;
+
+}
+
+.search-here{
+  font-family: "Montserrat";
+  color: #fff; 
+  margin-top: 100px;
+  margin-left: 50px;
+  font-size: 25px;
+
+}
