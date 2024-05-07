@@ -4,7 +4,7 @@ const express = require('express');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
 const routes = require('./controllers');
-// const helpers = require('./utils/helpers');
+const helpers = require('./utils/helpers');
 
 // Sequelize things (This will take care of the session stuff)
 const sequelize = require('./config/connection');
@@ -15,7 +15,7 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 // sets up Handlebars.js engine with custom helpers
-// const hbs = exphbs.create({ helpers });
+const hbs = exphbs.create({ helpers });
 
 // Middleware things
 const sess = {
@@ -37,8 +37,8 @@ const sess = {
 app.use(session(sess));
 
 // Will inform express on which hbs templets to use
-//app.engine('handlebars', hbs.engine);
-//app.set('view engine', 'handlebars');
+app.engine('handlebars', hbs.engine);
+app.set('view engine', 'handlebars');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended:true }));

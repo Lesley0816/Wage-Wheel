@@ -10,5 +10,6 @@ const userBetsData = [
 ];
 
 const seedUserBets = () => UserBets.bulkCreate(userBetsData);
+//seedUserBets();
 
 module.exports = seedUserBets;

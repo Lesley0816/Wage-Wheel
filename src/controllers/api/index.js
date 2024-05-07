@@ -12,6 +12,6 @@ const userBetRoutes = require('./UserBets');
 router.use('/category', categoryRoutes);
 router.use('/users', userRoutes);
 router.use('/events', eventRoutes);
-router.use('/userbets', userBetRoutes);
+router.use('/tags', userBetRoutes);
 
 module.exports = router;
