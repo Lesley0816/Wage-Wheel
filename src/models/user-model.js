@@ -37,18 +37,18 @@ User.init(
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
-                len: [20],
+                len: [1, 20],
             },
         },
     },
     {
         hooks: {
             beforeCreate: async (newUserData) => {
-                newUserData.password = await bcrypt.hash(newUserData.password, 12);
+                newUserData.password = await bcrypt.hash(newUserData.password, 20);
                 return newUserData;
             },
             beforeUpdate: async (updatedUserData) => {
-                updatedUserData.password = await bcrypt.hash(updatedUserData.password, 12);
+                updatedUserData.password = await bcrypt.hash(updatedUserData.password, 20);
                 return updatedUserData;
             },
         },

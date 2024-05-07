@@ -23,13 +23,20 @@ Event.init(
             type: DataTypes.STRING,
             allowNull: false
         },
-        placebet_cond_1: {
+        pool_a: {
             type: DataTypes.DECIMAL(10, 2),
             allowNull: false,
         },
-        placebet_cond_2: {
+        pool_b: {
             type: DataTypes.DECIMAL(10, 2),
             allowNull: false
+        },
+        category_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'category',
+                references: 'id'
+            }
         },
         user_id: {
             type: DataTypes.INTEGER,
