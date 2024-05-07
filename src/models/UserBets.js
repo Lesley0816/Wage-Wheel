@@ -28,17 +28,11 @@ UserBets.init(
         },
         cond_1: {
             type: DataTypes.DECIMAL(10, 2),
-            references: {
-                model: 'event',
-                key: 'id'
-            }
+            allowNull: false
         },
         cond_2: {
             type: DataTypes.DECIMAL(10, 2),
-            references: {
-                model: 'event',
-                key: 'id'
-            }
+            allowNull: false
         },
     },
     {
