@@ -22,8 +22,11 @@ Just sign into the website and get gambling!
 ## Usage
 
 
+![alt text](bet.png)
+![alt text](website #1.png)
+![alt text](top bets.png)
 
-![alt text](assets/images/screenshot.png)
+
 
 ## Credits
 
