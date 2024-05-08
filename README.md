@@ -6,9 +6,7 @@
 So we decided to create a betting website for our second project. To hit all the criteria, we created a betting website that takes user information and input 
 and makes bets with others around the world. We  have a log-in page that pulls your account from our server so we can make sure you have a safe gamble on the website. 
 
-## Table of Contents (Optional)
-
-If your README is long, add a table of contents to make it easy for users to find what they need.
+## Table of Contents
 
 - [Installation](#installation)
 - [Usage](#usage)
