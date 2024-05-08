@@ -21,8 +21,8 @@ Just sign into the website and get gambling!
 
 
 ![alt text](bet.png)
-![alt text](website #1.png)
-![alt text](top bets.png)
+![alt text](src/public/images/wesbite%20#1.png)
+![alt text](src/public/images/top%20bets.png)
 
 
 
