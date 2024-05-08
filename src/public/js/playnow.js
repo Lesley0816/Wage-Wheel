@@ -1,4 +1,5 @@
-const playbutton = document.querySelector('#play-btn')
+const playbutton = document.querySelector('#play-btn');
+const loginbtn = document.querySelector('#signup');
 
 const pullPlaybutton = async (event) => {
     const response = await fetch('/api/category', {
@@ -13,4 +14,9 @@ const pullPlaybutton = async (event) => {
     }
 }
 
+const loginlink = async (event) => {
+    document.location.replace('/login');
+}
+
 playbutton.addEventListener('click', pullPlaybutton);
+loginbtn.addEventListener('click', loginlink);

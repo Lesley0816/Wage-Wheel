@@ -27,12 +27,12 @@ router.get('/login', (req, res) => {
 });
 
 // go back for auth
-router.get('/signup', (req, res) => {
+router.get('/login', (req, res) => {
    if (req.session.logged_in) {
         res.redirect('/');
         return;
     }
-     res.render('signup');
+     res.render('login');
  });
 
  router.get('/categories', async (req, res) =>{
@@ -44,6 +44,14 @@ router.get('/signup', (req, res) => {
     } catch (err) {
         res.status(500).json(err);    
     }
+ });
+
+ router.get('/signup', async (req, res) => {
+    if (req.session.logged_in) {
+        res.redirect('/');
+        return;
+    }
+    res.render('signup');
  });
 
 module.exports = router;
