@@ -28,10 +28,12 @@ router.get('/:id', async (req, res) => {
 
 router.post('/', async (req, res) => {
     try {
+        console.log('above line 31', req.body);
         const userData = await User.create({
             ...req.body,
-            user_id: req.session.user_id
+            // user_id: req.session.user_id
         });
+        console.log("hello");
         res.status(200).json(userData);
     } catch (err) {
         res.status(400).json(err);

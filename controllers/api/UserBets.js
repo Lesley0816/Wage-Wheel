@@ -29,7 +29,7 @@ router.post('/', async (req, res) => {
     try {
         const userBetsData = await UserBets.create({
             ...req.body,
-            user_id: req.session.user_id
+            // user_id: req.session.user_id
         });
         const eventData = await Event.findByPk(id);
         if (req.cond_1 !== 0) {
@@ -50,6 +50,7 @@ router.post('/', async (req, res) => {
         res.status(200).json(userBetsData);
     } catch (err) {
         res.status(400).json(err);
+        console.log(err);
     }
 });
 
