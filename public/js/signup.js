@@ -1,12 +1,13 @@
-const signupbtn = document.getElementsByClassName('signup-button')
-
-async function signupPost(event) {
+const e1 = document.querySelector('#form-signup');
+const signupPost = async (event) => {
     event.preventDefault();
 
-    const username = document.querySelector('#enterUsername').value.trim();
-    const email = document.querySelector('#enterEmail').value.trim();
-    const password = document.querySelector('#createPassword').value.trim();
+    console.log(event,'event item');
+    const username = document.querySelector('#username-signup').value.trim();
+    const email = document.querySelector('#email-signup').value.trim();
+    const password = document.querySelector('#password-signup').value.trim();
 
+    console.log(username, email, password);
     if (username && email && password) {
         const response = await fetch('/api/users', {
             method: 'POST',
@@ -27,6 +28,7 @@ async function signupPost(event) {
             alert(response.statusText);
         }
     }
-}
+ }
 
-signupbtn.addEventListener('submit', signupPost);
+e1.addEventListener('submit', signupPost);
+console.log(e1);
